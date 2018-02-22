@@ -6,16 +6,16 @@ var bodyParser = require("body-parser");
 
 
 
-// app.use(bodyParser.urlencoded({ extended: false }));
+ app.use(bodyParser.urlencoded({ extended: false }));
 // // parse application/json
-// app.use(bodyParser.json());
+ app.use(bodyParser.json());
 
 // // Static directory
-// app.use(express.static("public"));
+ app.use(express.static("public"));
 
 // // Routes
 // // =============================================================
-// require("./routes/api-routes.js")(app);
+ require("./controllers/api-routes.js")(app);
 
 
 db.sequelize.sync().then(function() {
