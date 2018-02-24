@@ -15,20 +15,20 @@ $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and category select
   var nameInput = $("#meal_name");
   var ingredientsInput = $("#ingredients");
-  var instructionsInput = $("#instructions");
+  var directionsInput = $("#directions");
   var cmsForm = $("#cms");
 
-  $(cmsForm).on("submit", function handleFormSubmit(event) {
+  $(submitBtn).on("click", function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing a body or a title
-    if (!nameInput.val().trim() || !ingedientsInput.val().trim() || !instructionsInput.val().trim()) {
+    if (!nameInput.val().trim() || !ingredientsInput.val().trim() || !directionsInput.val().trim()) {
       return;
     }
     // Constructing a newPost object to hand to the database
     var newRecipes = {
       name: nameInput.val().trim(),
       ingredients: ingredientsInput.val().trim(),
-      instructions: instructionsInput.val().trim()
+      directions: directionsInput.val().trim()
     };
 
     console.log(newRecipes);
@@ -47,8 +47,8 @@ $(document).ready(function() {
   // Submits a new post and brings user to blog page upon completion
   function submitRecipes(Recipes) {
 
-    $.post("/api/recipes/", Recipes, function() {
-      window.location.href = "/foodie";
+    $.post("/api/recipes", Recipes, function() {
+      window.location.href = "/";
     });
   }
 
@@ -59,7 +59,7 @@ $(document).ready(function() {
         // If this post exists, prefill our cms forms with its data
         nameInput.val(data.name);
         ingredientsInput.val(data.ingredients);
-        instructionsInput.val(data.instructions);
+        directionsInput.val(data.directions);
 
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
