@@ -32,6 +32,11 @@
  /* END FORM STYLE */
 
  /* NAV WRAPPER */
- .input-field {
-     padding-top: 25px;
- }
+#search{
+    height: 85px;
+    margin-top: 45px;
+}
+
+#closebtn {
+    line-height: 85px;
+}
