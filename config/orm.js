@@ -9,7 +9,7 @@ var connection = require("./connection.js");
 // ORM
 // =============================================================
 
-var tableName = "Users";
+var tableName = "users";
 
 var orm = {
 
