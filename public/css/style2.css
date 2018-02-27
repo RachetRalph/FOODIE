@@ -32,26 +32,35 @@
  /* END FORM STYLE */
 
  /* NAV WRAPPER */
-#search{
+/* #search{
     height: 85px;
     margin-top: 45px;
-}
+} */
 
-#h3text {
+/* #h3text {
     font-family: 'Sedgwick Ave', cursive;
     font-size: 40px;
     font-weight: 800;
     color: gainsboro;
     text-align: center;
-    /* transform: translate(-50%, -50%); */
     text-shadow: 0 0 3px black;
-}
+} */
 
-#closebtn {
-    line-height: 85px;
-}
 
-#btns {
-    margin: auto;
-}
+  #results {
+      margin: auto;
+  }
 
+  figure.recipe-card {
+      display: inline-block;
+      width: 280px;
+  }
+
+  .recipe-title {
+      color: black;
+      font-size: 25px;
+  }
+
+  .recipe-description {
+      color: black;
+  }
