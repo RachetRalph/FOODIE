@@ -1,13 +1,13 @@
 
 
-// Requiring our Todo model
+// Requiring our model
 var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the posts
+  // GET route for getting all of the recipes
   app.get("/api/recipes/", function(req, res) {
     db.Recipes.findAll({})
     .then(function(dbRecipes) {
