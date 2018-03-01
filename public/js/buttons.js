@@ -1,9 +1,6 @@
 
 $(document).ready(function() {
-  /* global moment */
-  // blogContainer holds all of our posts
 
-  // CHANGE THIS vvv
   var recipesContainer = $("#recipes-container");
 
   var recipes;
@@ -24,10 +21,10 @@ $(document).ready(function() {
     });
   }
 
-  // Getting the initial list of posts
+  // Getting the initial list of recipes
   getRecipes();
   // InitializeRows handles appending all of our constructed post HTML inside
-  // blogContainer
+
   function initializeRows(recipes) {
     recipesContainer.empty();
     var recipesToAdd = [];
@@ -37,9 +34,7 @@ $(document).ready(function() {
     recipesContainer.append(recipesToAdd);
   }
 
-  // This function constructs a post's HTML
-
-  //DO I NEED TO CHANGE IT FROM POST TO RECIPES?
+  // This function constructs a recipe's HTML
   function createNewRow(recipes) {
     var newRecipePanel = $("<div>");
     newRecipePanel.addClass("panel panel-default");
@@ -68,22 +63,32 @@ $(document).ready(function() {
   }
 
 
-$("#cms").on("submit", function(event){
-  event.preventDefault();
-  var title = $("#meal_name").val();
-  var ingredients = $("#ingredients").val();
-  var directions = $("#directions").val();
+    $("#cms").on("submit", function (event) {
+        // Form behavior 
+        event.preventDefault();
 
-  var data = { 
-    name: title,
-    ingredients: ingredients,
-    directions: directions
-  };
+        // Window behavior 
+        window.location.reload()
+        
+        
 
-  $.post("/api/recipes", data, function(response) {
-    console.log(response);
-  });
+
+        var title = $("#meal_name").val();
+        var ingredients = $("#ingredients").val();
+        var directions = $("#directions").val();
+
+        var data = {
+            name: title,
+            ingredients: ingredients,
+            directions: directions
+        };
+
+        $.post("/api/recipes", data, function (response) {
+            console.log(response);
+            
+        });
+        
+    });
 });
 
-});
 
