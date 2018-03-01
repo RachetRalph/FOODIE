@@ -37,29 +37,10 @@
             </div>
             </div>
         
-                <div class="col s12 center">
-                    <div class="form-container">
-                        <form>
-                
-                            <h3 class="deep-purple-text lighten-1">Lets cook it !</h3>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="name" type="text" class="validate">
-                                    <label for="name">Name</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
-                            <center>
-                                <button id="add-userBtn" class="btn waves-effect waves deep-purple lighten-1" type="submit" name="action">GET RECIPES</button>
-                            </center>
-                        </form>
-                    </div>
-                </div>
+
+                <center>
+                    <button id="add-userBtn" class="btn waves-effect waves deep-purple lighten-1" type="submit" name="action">GET RECIPES</button>
+                </center>
         </div>  
     </main>
     <!-- FOOTER  -->
@@ -69,8 +50,13 @@
                 © 2018 Fridge Inc.
             </div>
         </div>
-        <!-- Custom script -->
-        <script src="js/index.js" type="text/javascript"></script>
+
     </footer>
+            <!-- Custom script -->
+            <script>
+                document.getElementById("add-userBtn").onclick = function () {
+                    location.href = "/recipy";
+                };
+            </script>
 
     </body>

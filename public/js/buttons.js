@@ -19,7 +19,7 @@ $(document).ready(function() {
        console.log("placeholder");
       }
       else {
-        initializeRows();
+        initializeRows(recipes);
       }
     });
   }
@@ -28,7 +28,7 @@ $(document).ready(function() {
   getRecipes();
   // InitializeRows handles appending all of our constructed post HTML inside
   // blogContainer
-  function initializeRows() {
+  function initializeRows(recipes) {
     recipesContainer.empty();
     var recipesToAdd = [];
     for (var i = 0; i < recipes.length; i++) {

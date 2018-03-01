@@ -15,7 +15,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sedgwick+Ave">
-    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="./css/style2.css">
     <title>Fridge</title>
 </head>
 
@@ -24,195 +24,42 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-wrapper deep-purple lighten-1 ">
-            <a href="#" class="brand-logo center">
+            <a href="/" class="brand-logo center">
                 <img class="logo-img" src="./img/logo.png">
             </a>
         </div>
     </nav>
 
     <main>
-    <div class="container">
-        <!-- Search Bar  -->
-         <div class="row">
-            <div class="col s12">
-            <nav id="search" >
-                <div class="nav-wrapper deep-purple lighten-2">
-                    <form>
-                        <div class="input-field">
-                            <input action="api-endpoint" method="GET" id="ingredients-form" type="search" placeholder="bread, milk, eggs, etc..." required>
-                            <label class="label-icon" for="search">
-                                <i class="material-icons">search</i>
-                            </label>
-                            <i id="closebtn" class="material-icons">close</i>
-                        </div>
-                    </form>
-                </div>
-            </nav>
+        <div class="container">
+            <header class="middle" role="search header">
+                <h1>Bring a Dish</h1>
+                <h3>You give us the ingredients and we give you the recipes that you can make!</h3>
+                <form action="api-endpoint" method="GET" id="ingredients-form">
+                    <input type="text" id="user-ingredients" placeholder="Ex. Apples, milk, eggs, butter" label="Ingredient Search Bar" />
+                    <!-- <input type="submit" id="submit" value="Find Recipes! " class="input-button"> -->
+                <center>
+                    <button type="submit" id="submit" class="btn waves-effect waves deep-purple lighten-1" name="action">FIND RECIPES</button>
+                    <button type="submit" id="add-recipy" class="btn waves-effect waves pink lighten-1" name="action">ADD RECIPES</button>
+                </center>
+                </form>
+
+            </header>
+            <div id="results"></div>
+            <br>
+        </div>
+    </main>
+    <footer class="page-footer deep-purple lighten-1">
+        <div class="footer-copyright">
+            <div id="foot">
+                © 2018 Fridge Inc.
             </div>
         </div>
-
-        <!-- Cards -->
-            <!-- <div id="card-reveal" class="section">
-                <!-- <h4 class="header">Card Reveal</h4> -->
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <div class="row">
-                            <div class="col s12 m4 l4">
-                                <div class="card" style="overflow: hidden;">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator" src="./img/food1.jpg">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">more_vert</i>
-                                        </span>
-                                        <p>
-                                            <a href="#">This is a link</a>
-                                        </p>
-                                    </div>
-            
-            
-                                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                                        <span class="card-title grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">close</i>
-                                        </span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="col s12 m4 l4">
-                                <div class="card" style="overflow: hidden;">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator" src="./img/food1.jpg">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">more_vert</i>
-                                        </span>
-                                        <p>
-                                            <a href="#">This is a link</a>
-                                        </p>
-                                    </div>
-            
-            
-                                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                                        <span class="card-title grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">close</i>
-                                        </span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="col s12 m4 l4">
-                                <div class="card" style="overflow: hidden;">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator" src="./img/food1.jpg">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">more_vert</i>
-                                        </span>
-                                        <p>
-                                            <a href="#">This is a link</a>
-                                        </p>
-                                    </div>
-            
-            
-                                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                                        <span class="card-title grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">close</i>
-                                        </span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="col s12 m4 l4">
-                                <div class="card" style="overflow: hidden;">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator" src="./img/food1.jpg">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">more_vert</i>
-                                        </span>
-                                        <p>
-                                            <a href="#">This is a link</a>
-                                        </p>
-                                    </div>
-            
-            
-                                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                                        <span class="card-title grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">close</i>
-                                        </span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="col s12 m4 l4">
-                                <div class="card" style="overflow: hidden;">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator" src="./img/food1.jpg">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">more_vert</i>
-                                        </span>
-                                        <p>
-                                            <a href="#">This is a link</a>
-                                        </p>
-                                    </div>
-            
-            
-                                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                                        <span class="card-title grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">close</i>
-                                        </span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="col s12 m4 l4">
-                                <div class="card" style="overflow: hidden;">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator" src="./img/food1.jpg">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">more_vert</i>
-                                        </span>
-                                        <p>
-                                            <a href="#">This is a link</a>
-                                        </p>
-                                    </div>
-            
-            
-                                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                                        <span class="card-title grey-text text-darken-4">Card Title
-                                            <i class="material-icons right">close</i>
-                                        </span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-    </div>
-    </main>
-        <footer class="page-footer deep-purple lighten-1">
-            <div class="footer-copyright">
-                <div id="foot">
-                    © 2018 Fridge Inc.
-                </div>
-            </div>
-        </footer>
+    </footer>
+    <script src="./js/recipy.js"></script>
+    <script>
+                    document.getElementById("add-recipy").onclick = function () {
+                            location.href = "/buttons";
+                        };
+    </script>
 </body>
-</html>
