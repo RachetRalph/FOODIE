@@ -1,8 +1,17 @@
 {
-  "name": "foodie",
-  "version": "1.0.0",
-  "description": "Food Application",
+  "name": "fridge",
+  "version": "1.5.0",
+  "description": "An application that recommends recipes based on ingredients in ones fridge & Pantry!",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.2",
+    "nodemon": "^1.17.1",
+    "sequelize": "^4.35.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,17 +20,16 @@
     "type": "git",
     "url": "git+https://github.com/RachetRalph/FOODIE.git"
   },
-  "author": "Kassi, Chris, Ralph",
+  "keywords": [
+    "Food",
+    "Recipe",
+    "Recommendations",
+    "Grub."
+  ],
+  "author": "Ralph A, Cassie E, Chris B",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RachetRalph/FOODIE/issues"
   },
-  "homepage": "https://github.com/RachetRalph/FOODIE#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "mysql2": "^1.5.2",
-    "nodemon": "^1.15.1",
-    "sequelize": "^4.33.4"
-  }
+  "homepage": "https://github.com/RachetRalph/FOODIE#readme"
 }

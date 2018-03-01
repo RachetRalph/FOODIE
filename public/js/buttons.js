@@ -69,7 +69,15 @@ $(document).ready(function () {
 
 
     $("#cms").on("submit", function (event) {
+        // Form behavior 
         event.preventDefault();
+
+        // Window behavior 
+        window.location.reload()
+        
+        
+
+
         var title = $("#meal_name").val();
         var ingredients = $("#ingredients").val();
         var directions = $("#directions").val();
@@ -82,7 +90,9 @@ $(document).ready(function () {
 
         $.post("/api/recipes", data, function (response) {
             console.log(response);
+            
         });
+        
     });
-
+    let i = () => window.scrollBy(0, 1000);
 });
