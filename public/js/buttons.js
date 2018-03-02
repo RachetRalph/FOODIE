@@ -74,9 +74,7 @@ $(document).ready(function () {
 
         // Window behavior 
         window.location.reload()
-        
-        
-
+    
 
         var title = $("#meal_name").val();
         var ingredients = $("#ingredients").val();
@@ -94,5 +92,5 @@ $(document).ready(function () {
         });
         
     });
-    let i = () => window.scrollBy(0, 1000);
+   
 });
