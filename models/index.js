@@ -12,8 +12,7 @@ console.log(config);
 console.log(process.env.JAWSDB_URL);
 
 if (config.use_env_variable) {
-  // var sequelize = new Sequelize(process.env[config.use_env_variable], config);
-  var sequelize = new Sequelize(process.env.JAWSDB_URL);
+  var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
