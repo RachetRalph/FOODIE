@@ -13,7 +13,7 @@ describe('Load a Page', function () {
     describe('/ (Home Page)', () => {
         it('Loaded landing page without an error', done => {
             // your actual testing urls will likely be `http://localhost:port/path`
-            nightmare.goto('http://localhost:8000/')
+            nightmare.goto('https://food-in-fridge.herokuapp.com/')
                 .wait(500)
                 .click('#add-userBtn')
                 .end()
@@ -24,7 +24,7 @@ describe('Load a Page', function () {
 
     describe('/recipy (Recipy Search & Add Page)', () => {
         it('Succesfully quried spoonacular API without any errors', done => {
-            nightmare.goto('http://localhost:8000/recipy')
+            nightmare.goto('https://food-in-fridge.herokuapp.com/recipy')
             .type('#user-ingredients','pasta, tomato, basil, chicken, marinara')    
             .click('#submit')
             .wait(2500)
@@ -38,7 +38,7 @@ describe('Load a Page', function () {
 
     describe('/recipy (Recipy Search & Add Page)', () => {
         it('Navigated to Add recipe page without any errors', done => {
-            nightmare.goto('http://localhost:8000/recipy')
+            nightmare.goto('https://food-in-fridge.herokuapp.com/recipy')
                 .click('#add-recipy')
                 .wait(500)
                 .end()
@@ -49,10 +49,10 @@ describe('Load a Page', function () {
 
     describe('/buttons (Recipy Search & Add Page)', () => {
         it('Added a recipe to server & posted to page without any errors', done => {
-            nightmare.goto('http://localhost:8000/buttons')
+            nightmare.goto('https://food-in-fridge.herokuapp.com/buttons')
                 .type('#meal_name', 'Quick and Easy French Toast') 
                 .type('#ingredients', '1 egg, 1 teaspoon vanilla extract, 1/2 teaspoon cinnamon, 1/4 cup milk, 4 bread slices')    
-                .type('#directions', 'Beat egg, vanilla and cinnamon, dip bread in mixture. Cook bread slices on nonstick griddle on medium heat until browned on both sides.')  
+                .type('#directions', 'Beat egg, vanilla and cinnamon, dip bread in mixture. Cook bread slices until browned on both sides.')  
                 .wait(500)
                 .click('#submitBtn')
                 .wait(10000)
