@@ -91,6 +91,10 @@ $(document).ready(function () {
             
         });
         
+        // reset back to empty strings
+        $("#meal_name").val('');
+        $("#ingredients").val('');
+        $("#directions").val('');
     });
    
 });

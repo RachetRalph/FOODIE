@@ -3,7 +3,7 @@ const assert = require('assert')
 
 describe('Load a Page', function () {
     // Recommended: 5s locally, 10s to remote server, 30s from airplane ¯\_(ツ)_/¯
-    this.timeout('30s')
+    this.timeout('40s')
 
     let nightmare = null
     beforeEach(() => {
